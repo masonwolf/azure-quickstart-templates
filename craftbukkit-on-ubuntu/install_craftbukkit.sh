@@ -51,6 +51,7 @@ adduser --system --no-create-home --home /srv/minecraft-server $minecraft_user
 addgroup --system $minecraft_group
 mkdir $minecraft_server_path
 cd $minecraft_server_path
+export HOME=$minecraft_server_path
 
 # download the server jar
 while ! echo y | wget $BUILDTOOLSURL; do
